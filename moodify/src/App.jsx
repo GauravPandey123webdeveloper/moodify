@@ -15,7 +15,7 @@ export default function App() {
         ? musicLink.replace("watch?v=", "embed/")
         : musicLink;
       console.log("Formatted Link: ", embedLink);
-      await axios.post("http://localhost:8000/addmusic", {
+      await axios.post("https://moodifybackend.onrender.com/addmusic", {
         link: embedLink,
         mood,
       });
@@ -31,7 +31,7 @@ export default function App() {
     try {
       console.log("Selected Mood:", selectedMood);
       const response = await axios.get(
-        `http://localhost:8000/getmusic/${selectedMood}`
+        `https://moodifybackend.onrender.com/getmusic/${selectedMood}`
       );
       console.log("Fetched Links:", response.data.links);
       setMusicLinks(response.data.links);
