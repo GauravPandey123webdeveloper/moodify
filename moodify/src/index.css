@@ -1,0 +1,13 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+
+    background-image: url("https://cdn.pixabay.com/animation/2023/11/11/05/12/05-12-36-786_512.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    backdrop-filter: blur(20px);
+    
+
+}
