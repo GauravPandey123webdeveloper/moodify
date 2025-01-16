@@ -11,9 +11,10 @@ export default function App() {
   const handleAddMusic = async (e) => {
     e.preventDefault();
     try {
-      const embedLink = musicLink.includes("watch?v=")
-        ? musicLink.replace("watch?v=", "embed/")
-        : musicLink;
+      let embedLink = musicLink.includes("watch?v=")
+      ? musicLink.replace("watch?v=", "embed/"): musicLink.includes("youtu.be/")
+      ? musicLink.replace("youtu.be/", "youtube.com/embed/").split('?')[0]: musicLink;
+
       console.log("Formatted Link: ", embedLink);
       await axios.post("https://moodifybackend.onrender.com/addmusic", {
         link: embedLink,
